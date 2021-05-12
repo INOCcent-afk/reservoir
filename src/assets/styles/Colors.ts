@@ -1,0 +1,8 @@
+export const Colors = {
+  body: "#0B0E11",
+  bodyFontColor: "#dee3ea",
+  primaryBackgroundColor: "#151a21",
+  secondaryBackgroundColor: "#242c37",
+  primaryFontColor: "#5d7290",
+  secondaryFontColor: "#fd4d4d",
+};
