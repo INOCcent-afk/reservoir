@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import Pagination from "@material-ui/lab/Pagination";
 
-import {
-  facebookProvider,
-  githubProvider,
-  googleProvider,
-} from "./config/authMethod";
+import { githubProvider, googleProvider } from "./config/authMethod";
 import socialMediaAuth, { auth } from "./service/auth";
 
 function App() {
   const [status, setStatus] = useState(false);
+  const [name, setName] = useState("");
+  const [pPic, setPPic] = useState("");
 
   const handleOnClick = async (provider: any) => {
     const response = await socialMediaAuth(provider);
 
     console.log(response);
+
+    setPPic(`${response.photoURL}?access_token=`);
+    setName(response.displayName);
+
     setStatus(true);
   };
 
@@ -34,19 +36,18 @@ function App() {
   return (
     <>
       {status ? (
-        <h1 onClick={logOut}>logout</h1>
+        <>
+          <h1 onClick={logOut}>logout</h1>
+          <h1>{name}</h1>
+          <img src={pPic} alt="" />
+          <Pagination count={5}></Pagination>
+        </>
       ) : (
         <>
-          <button onClick={() => handleOnClick(facebookProvider)}>
-            facebook
-          </button>
           <button onClick={() => handleOnClick(githubProvider)}>github</button>
           <button onClick={() => handleOnClick(googleProvider)}>google</button>
         </>
       )}
-
-      <h1>APP</h1>
-      <Pagination count={5}></Pagination>
     </>
   );
 }
