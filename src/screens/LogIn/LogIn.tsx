@@ -1,7 +1,11 @@
 import React from "react";
 
 const LogIn = () => {
-  return <>Log In</>;
+  return (
+    <div>
+      <h1>HELLO POTA</h1>
+    </div>
+  );
 };
 
 export default LogIn;
