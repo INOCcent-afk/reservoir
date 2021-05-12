@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "@material-ui/lab/Pagination";
 
 import {
   facebookProvider,
@@ -19,6 +20,7 @@ function App() {
       <button onClick={() => handleOnClick(githubProvider)}>github</button>
       <button onClick={() => handleOnClick(googleProvider)}>google</button>
       <h1>APP</h1>
+      <Pagination count={5}></Pagination>
     </>
   );
 }
