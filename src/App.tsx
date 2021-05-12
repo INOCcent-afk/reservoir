@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import Pagination from "@material-ui/lab/Pagination";
 
 import { githubProvider, googleProvider } from "./config/authMethod";
 import socialMediaAuth, { auth } from "./service/auth";
+import { Route, Switch } from "react-router";
+import AppScreen from "./screens/App";
+
+import LogIn from "./screens/LogIn";
+import { GlobalStyle } from "./assets/styles/GlobalStyle";
 
 function App() {
   const [status, setStatus] = useState(false);
@@ -11,8 +15,6 @@ function App() {
 
   const handleOnClick = async (provider: any) => {
     const response = await socialMediaAuth(provider);
-
-    console.log(response);
 
     setPPic(`${response.photoURL}?access_token=`);
     setName(response.displayName);
@@ -28,28 +30,35 @@ function App() {
         console.log("logout");
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
-    console.log("hello");
   };
 
   return (
     <>
-      {status ? (
+      {/* {status ? (
         <>
           <h1 onClick={logOut}>logout</h1>
           <h1>{name}</h1>
           <img src={pPic} alt="" />
-          <Pagination count={5}></Pagination>
+          
         </>
       ) : (
         <>
           <button onClick={() => handleOnClick(githubProvider)}>github</button>
           <button onClick={() => handleOnClick(googleProvider)}>google</button>
         </>
-      )}
+      )} */}
+      <Switch>
+        <GlobalStyle />
+        <Route path="/App" component={AppScreen} />
+        <Route path="/" component={LogIn} />
+      </Switch>
     </>
   );
 }
 
 export default App;
+
+// import Pagination from "@material-ui/lab/Pagination";
+// <Pagination count={5}></Pagination>
