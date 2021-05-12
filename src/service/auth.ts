@@ -1,5 +1,7 @@
 import firebase from "../config/firebase-config";
 
+export const auth = firebase.auth();
+
 const socialMediaAuth = (provider: any) => {
   return firebase
     .auth()
