@@ -10,20 +10,41 @@ import { ReactComponent as LogoutIcon } from "../../assets/icons/logout-icon.svg
 import { ReactComponent as ProfileIcon } from "../../assets/icons/profile-icon.svg";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search-icon.svg";
 
-const Icon: FC<{}> = () => {
-  return (
-    <>
-      <GoogleIcon />
-      <BugIcon />
-      <CartIcon />
-      <DiscordIcon />
-      <GithubIcon />
-      <HomeIcon />
-      <LogoutIcon />
-      <ProfileIcon />
-      <SearchIcon />
-    </>
-  );
+type Props = {
+  icon:
+    | "google"
+    | "bug"
+    | "cart"
+    | "discord"
+    | "github"
+    | "home"
+    | "logout"
+    | "profile"
+    | "search";
+};
+
+const Icon: FC<Props> = ({ icon }: Props) => {
+  switch (icon) {
+    case "google":
+      return <GoogleIcon />;
+    case "bug":
+      return <BugIcon />;
+    case "cart":
+      return <CartIcon />;
+    case "discord":
+      return <DiscordIcon />;
+    case "github":
+      return <GithubIcon />;
+    case "home":
+      return <HomeIcon />;
+    case "logout":
+      return <LogoutIcon />;
+    case "profile":
+      return <ProfileIcon />;
+    case "search":
+      return <SearchIcon />;
+  }
+  return null;
 };
 
 export default Icon;

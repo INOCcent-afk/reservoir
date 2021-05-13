@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     html { 
         font-size: 10px;
     }
-    
+
     body {
         margin: 0;
         background: ${Colors.body};
@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 { 
         font-size: 3rem;
+    }
+
+    svg { 
+        width: 100%;
     }
 
     g  {
