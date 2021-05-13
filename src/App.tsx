@@ -12,6 +12,7 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 
 import { BodyInner, GlobalStyle } from "./assets/styles/GlobalStyle";
 import { Colors } from "./assets/styles/Colors";
+import MobileNavigation from "./components/MobileNavigation";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -81,6 +82,7 @@ const App = () => {
           <Route path="/" exact component={LogIn} />
         </Switch>
       </BodyInner>
+      <MobileNavigation />
     </>
   );
 };
