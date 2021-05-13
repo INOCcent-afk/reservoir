@@ -13,7 +13,7 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { GlobalStyle } from "./assets/styles/GlobalStyle";
 import { Colors } from "./assets/styles/Colors";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       "& .MuiPaginationItem-root": {
