@@ -10,7 +10,7 @@ import LogIn from "./screens/LogIn";
 import Pagination from "@material-ui/lab/Pagination";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 
-import { GlobalStyle } from "./assets/styles/GlobalStyle";
+import { BodyInner, GlobalStyle } from "./assets/styles/GlobalStyle";
 import { Colors } from "./assets/styles/Colors";
 
 const useStyles = makeStyles(() =>
@@ -75,10 +75,12 @@ const App = () => {
         <Pagination count={5} color="primary"></Pagination>
       </div>
       <GlobalStyle />
-      <Switch>
-        <Route path="/app" exact component={AppScreen} />
-        <Route path="/" exact component={LogIn} />
-      </Switch>
+      <BodyInner>
+        <Switch>
+          <Route path="/app" exact component={AppScreen} />
+          <Route path="/" exact component={LogIn} />
+        </Switch>
+      </BodyInner>
     </>
   );
 };

@@ -1,5 +1,7 @@
+import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import { Colors } from "./Colors";
+import { ScreenSize } from "./ScreenSize";
 
 export const GlobalStyle = createGlobalStyle`
     * { 
@@ -22,11 +24,23 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 3rem;
     }
 
-    svg { 
-        width: 100%;
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: ${Colors.bodyFontColor} ;
     }
 
-    g  {
-            fill: ${Colors.bodyFontColor};
+    a  {
+        text-decoration: none;
+        fill: ${Colors.bodyFontColor}
     }
+  
+`;
+
+export const BodyInner = styled.div`
+  margin: 0 10px;
+
+  @media only scree and (min-width: ${ScreenSize.tabletScreen}) {
+    margin: 0 auto;
+  }
 `;

@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import { ReactComponent as GoogleIcon } from "../../assets/icons/google-icon.svg";
 import { ReactComponent as BugIcon } from "../../assets/icons/bug-icon.svg";
 import { ReactComponent as CartIcon } from "../../assets/icons/cart-icon.svg";
-import { ReactComponent as DiscordIcon } from "../../assets/icons/discord-icon.svg";
 import { ReactComponent as GithubIcon } from "../../assets/icons/github-icon.svg";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home-icon.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/icons/logout-icon.svg";
@@ -15,7 +14,6 @@ type Props = {
     | "google"
     | "bug"
     | "cart"
-    | "discord"
     | "github"
     | "home"
     | "logout"
@@ -31,8 +29,6 @@ const Icon: FC<Props> = ({ icon }: Props) => {
       return <BugIcon />;
     case "cart":
       return <CartIcon />;
-    case "discord":
-      return <DiscordIcon />;
     case "github":
       return <GithubIcon />;
     case "home":
@@ -44,7 +40,6 @@ const Icon: FC<Props> = ({ icon }: Props) => {
     case "search":
       return <SearchIcon />;
   }
-  return null;
 };
 
 export default Icon;
