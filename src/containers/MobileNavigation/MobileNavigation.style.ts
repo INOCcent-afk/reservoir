@@ -17,11 +17,28 @@ export const Header = styled.header`
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 500px;
   margin: 0 auto;
 
   svg {
     width: 25px;
     height: 25px;
+  }
+`;
+
+export const LoginHeader = styled(Header)`
+  border-top: none;
+  padding: 20px;
+
+  svg {
+    fill: ${Colors.primaryFontColor};
+  }
+  svg:hover {
+    fill: ${Colors.bodyFontColor};
+  }
+
+  @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
+    display: block;
   }
 `;

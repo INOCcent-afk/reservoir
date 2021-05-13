@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
     h1 { 
         font-size: 3rem;
     }
+    p { 
+        color: ${Colors.primaryFontColor};
+        font-size: 1.4rem;
+    }
 
     svg {
         width: 20px;
