@@ -1,18 +1,29 @@
-import React from "react";
+import React, { FC } from "react";
+import { useLocation } from "react-router";
 
 import Icon from "../Icon";
+
 import { Header, Nav } from "./MobileNavigation.style";
 
-const MobileNavigation = () => {
+type Props = {};
+
+const MobileNavigation: FC<Props> = (props: Props) => {
+  const location = useLocation();
+
+  const currentPath = location.pathname;
   return (
     <>
-      <Header>
-        <Nav>
-          <Icon icon="home" />
-          <Icon icon="cart" />
-          <Icon icon="profile" />
-        </Nav>
-      </Header>
+      {currentPath === "/" ? (
+        <h1>HELLO WORLD</h1>
+      ) : (
+        <Header>
+          <Nav>
+            <Icon icon="home" />
+            <Icon icon="cart" />
+            <Icon icon="profile" />
+          </Nav>
+        </Header>
+      )}
     </>
   );
 };
