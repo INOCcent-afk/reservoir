@@ -10,13 +10,19 @@ export const GlobalStyle = createGlobalStyle`
     html { 
         font-size: 10px;
     }
+    
     body {
         margin: 0;
         background: ${Colors.body};
         color: ${Colors.bodyFontColor};
         font-family: 'Inter', sans-serif;
     }
+
     h1 { 
         font-size: 3rem;
+    }
+
+    g  {
+            fill: ${Colors.bodyFontColor};
     }
 `;
