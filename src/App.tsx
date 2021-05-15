@@ -62,7 +62,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <BodyInner>
-        {status ? (
+        {/* {status ? (
           <>
             <h1 onClick={logOut}>logout</h1>
             <h1>{name}</h1>
@@ -77,11 +77,10 @@ const App = () => {
               google
             </button>
           </>
-        )}
-        <div className={classes.root}>
+        )} */}
+        {/* <div className={classes.root}>
           <Pagination count={5} color="primary"></Pagination>
-        </div>
-
+        </div> */}
         <Switch>
           <Route path="/app" exact component={AppScreen} />
           <Route path="/" exact component={LogIn} />

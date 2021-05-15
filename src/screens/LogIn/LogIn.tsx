@@ -1,20 +1,22 @@
 import React from "react";
+import Button from "../../components/Button";
 import Icon from "../../components/Icon";
 import Box from "../../containers/Box";
 
+import { Container, SocialMediaContainer } from "./Login.styles";
+
 const LogIn = () => {
   return (
-    <div>
-      <Icon icon="bug" />
-      <Icon icon="cart" />
-      <Icon icon="github" />
-      <Icon icon="google" />
-      <Icon icon="home" />
-      <Icon icon="logout" />
-      <Icon icon="profile" />
-      <Icon icon="search" />
-      <h1>HJELLO</h1>
-    </div>
+    <>
+      <Container>
+        <Box>
+          <SocialMediaContainer>
+            <Button icon={<Icon icon="github" />} text="Log in with Github" />
+            <Button icon={<Icon icon="github" />} text="Log in with Github" />
+          </SocialMediaContainer>
+        </Box>
+      </Container>
+    </>
   );
 };
 
