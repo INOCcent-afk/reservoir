@@ -6,7 +6,7 @@ export const ButtonContainer = styled.button`
   border: none;
   border-radius: 8px;
   display: flex;
-  padding: 15px 20px;
+  padding: 13px 20px;
   align-items: center;
   width: 100%;
   justify-content: center;

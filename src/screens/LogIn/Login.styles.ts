@@ -14,3 +14,11 @@ export const SocialMediaContainer = styled.div`
   margin: 0 auto;
   width: 100%;
 `;
+
+export const Title = styled.div`
+  margin-bottom: 40px;
+
+  h1 {
+    margin: 10px 0;
+  }
+`;
