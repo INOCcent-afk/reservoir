@@ -60,23 +60,28 @@ const App = () => {
 
   return (
     <>
-      {status ? (
-        <>
-          <h1 onClick={logOut}>logout</h1>
-          <h1>{name}</h1>
-          <img src={pPic} alt="" />
-        </>
-      ) : (
-        <>
-          <button onClick={() => handleOnClick(githubProvider)}>github</button>
-          <button onClick={() => handleOnClick(googleProvider)}>google</button>
-        </>
-      )}
-      <div className={classes.root}>
-        <Pagination count={5} color="primary"></Pagination>
-      </div>
       <GlobalStyle />
       <BodyInner>
+        {status ? (
+          <>
+            <h1 onClick={logOut}>logout</h1>
+            <h1>{name}</h1>
+            <img src={pPic} alt="" />
+          </>
+        ) : (
+          <>
+            <button onClick={() => handleOnClick(githubProvider)}>
+              github
+            </button>
+            <button onClick={() => handleOnClick(googleProvider)}>
+              google
+            </button>
+          </>
+        )}
+        <div className={classes.root}>
+          <Pagination count={5} color="primary"></Pagination>
+        </div>
+
         <Switch>
           <Route path="/app" exact component={AppScreen} />
           <Route path="/" exact component={LogIn} />

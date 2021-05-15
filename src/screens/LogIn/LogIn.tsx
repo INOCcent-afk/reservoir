@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "../../components/Icon";
+import Box from "../../containers/Box";
 
 const LogIn = () => {
   return (
@@ -12,6 +13,7 @@ const LogIn = () => {
       <Icon icon="logout" />
       <Icon icon="profile" />
       <Icon icon="search" />
+      <h1>HJELLO</h1>
     </div>
   );
 };

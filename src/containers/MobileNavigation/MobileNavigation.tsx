@@ -3,12 +3,11 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 
 import Icon from "../../components/Icon";
+import LogoBranding from "../../components/LogoBranding";
 
 import { Header, LoginHeader, Nav } from "./MobileNavigation.style";
 
-type Props = {};
-
-const MobileNavigation: FC<Props> = (props: Props) => {
+const MobileNavigation: FC = () => {
   const location = useLocation();
 
   const currentPath = location.pathname;
@@ -16,6 +15,7 @@ const MobileNavigation: FC<Props> = (props: Props) => {
     <>
       {currentPath === "/" ? (
         <LoginHeader>
+          <LogoBranding />
           <Nav>
             <Link to="/app">
               <p>Privacy Policy</p>

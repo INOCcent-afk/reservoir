@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         background: ${Colors.body};
         color: ${Colors.bodyFontColor};
         font-family: 'Inter', sans-serif;
+        overflow: hidden;
     }
 
     h1 { 
@@ -43,8 +44,9 @@ export const GlobalStyle = createGlobalStyle`
 
 export const BodyInner = styled.div`
   margin: 0 10px;
+  max-width: 1300px;
 
-  @media only scree and (min-width: ${ScreenSize.tabletScreen}) {
+  @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
     margin: 0 auto;
   }
 `;

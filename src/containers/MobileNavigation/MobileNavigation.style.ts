@@ -20,6 +20,7 @@ export const Nav = styled.nav`
   align-items: center;
   max-width: 500px;
   margin: 0 auto;
+  width: 100%;
 
   svg {
     width: 25px;
@@ -30,15 +31,32 @@ export const Nav = styled.nav`
 export const LoginHeader = styled(Header)`
   border-top: none;
   padding: 20px;
+  max-width: 1300px;
+  left: 50%;
+  transform: translate(-50%, 0);
 
   svg {
     fill: ${Colors.primaryFontColor};
   }
-  svg:hover {
+  svg:hover,
+  p:hover {
     fill: ${Colors.bodyFontColor};
+    color: ${Colors.bodyFontColor};
+  }
+  nav {
+    margin: 0;
+  }
+
+  .logo-footer {
+    display: none;
   }
 
   @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-footer {
+      display: block;
+    }
   }
 `;
