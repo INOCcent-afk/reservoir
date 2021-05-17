@@ -15,6 +15,8 @@ import { Colors } from "./assets/styles/Colors";
 import MobileNavigation from "./containers/MobileNavigation";
 
 import firebase from "./config/firebase-config";
+import { getUserInfo } from "./redux/AuthUser.slice";
+import { useAppDispatch } from "./redux/hook";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -44,10 +46,7 @@ const App = () => {
 
   const handleOnClick = async (provider: any) => {
     const response = await socialMediaAuth(provider);
-
-    setPPic(response?.photoURL!);
-    setName(response?.displayName!);
-
+    console.log(response);
     history.push("/app");
   };
 
@@ -63,19 +62,22 @@ const App = () => {
     history.push("/");
   };
 
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      setPPic(user?.photoURL!);
-      setName(user?.displayName!);
-    });
+  const dispatch = useAppDispatch();
 
-    if (currentUser === true) {
-      history.push("/app");
-    }
-    if (currentUser === false) {
-      history.push("/");
-    }
+  useEffect(() => {
+    // auth.onAuthStateChanged((user) => {
+    //   setCurrentUser(user);
+    //   setPPic(user?.photoURL!);
+    //   setName(user?.displayName!);
+    // });
+    // if (currentUser === true) {
+    //   history.push("/app");
+    // }
+    // if (currentUser === false) {
+    //   history.push("/");
+    // }
+
+    dispatch(getUserInfo());
   }, []);
 
   return (
