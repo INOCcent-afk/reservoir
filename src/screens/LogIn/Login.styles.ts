@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ScreenSize } from "../../assets/styles/ScreenSize";
 
 export const Container = styled.div`
   max-width: 400px;
@@ -20,5 +21,19 @@ export const Title = styled.div`
 
   h1 {
     margin: 10px 0;
+  }
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  left: 49%;
+  transform: translate(-49%, 50px);
+
+  @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
+    display: none;
   }
 `;

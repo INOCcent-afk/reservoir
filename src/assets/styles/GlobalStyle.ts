@@ -37,7 +37,12 @@ export const GlobalStyle = createGlobalStyle`
 
     a  {
         text-decoration: none;
-        fill: ${Colors.bodyFontColor}
+        fill: ${Colors.bodyFontColor};
+    }
+
+    span { 
+        color: ${Colors.secondaryFontColor};
+        margin-left: 5px;
     }
   
 `;

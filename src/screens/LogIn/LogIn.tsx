@@ -1,13 +1,22 @@
 import React from "react";
 import Button from "../../components/Button";
 import Icon from "../../components/Icon";
+import LogoBranding from "../../components/LogoBranding";
 import Box from "../../containers/Box";
 
-import { Container, SocialMediaContainer, Title } from "./Login.styles";
+import {
+  Container,
+  SocialMediaContainer,
+  Title,
+  LogoContainer,
+} from "./Login.styles";
 
 const LogIn = () => {
   return (
     <>
+      <LogoContainer>
+        <LogoBranding />
+      </LogoContainer>
       <Container>
         <Box>
           <SocialMediaContainer>
