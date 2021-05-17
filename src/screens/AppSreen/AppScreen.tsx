@@ -1,11 +1,7 @@
 import React from "react";
 
 const AppScreen = () => {
-  return (
-    <div>
-      <h1>HELLO</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default AppScreen;
