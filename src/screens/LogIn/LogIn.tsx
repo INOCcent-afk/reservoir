@@ -31,7 +31,7 @@ const LogIn = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, 3000);
+    }, 1500);
   }, []);
 
   return (

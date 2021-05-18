@@ -10,8 +10,8 @@ const AppScreen: FC = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, 3000);
-  }, [show]);
+    }, 800);
+  }, []);
 
   return (
     <>

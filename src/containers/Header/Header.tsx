@@ -2,12 +2,15 @@ import React, { FC, useState } from "react";
 
 import { Link, useHistory } from "react-router-dom";
 import Icon from "../../components/Icon";
+import LogoBranding from "../../components/LogoBranding";
+import SearchInput from "../../components/SearchInput/SearchInput";
 import firebase from "../../config/firebase-config";
 
 import {
   HeaderContainer,
   MobileHeader,
   ProfilePictureContainer,
+  DesktopHeader,
 } from "./Header.styles";
 
 const Header: FC = () => {
@@ -53,6 +56,17 @@ const Header: FC = () => {
               <Icon icon="search" />
             </Link>
           </MobileHeader>
+          <DesktopHeader>
+            <LogoBranding />
+            <SearchInput />
+
+            <ProfilePictureContainer onClick={logOut}>
+              <div className="image-container">
+                <img src={profilePicture} alt="user_picture" />
+              </div>
+              <div className="circle"></div>
+            </ProfilePictureContainer>
+          </DesktopHeader>
         </HeaderContainer>
       )}
     </>
