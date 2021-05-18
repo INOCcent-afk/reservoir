@@ -1,111 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-import { githubProvider, googleProvider } from "./config/authMethod";
-import socialMediaAuth, { auth } from "./utils/auth";
 import { Route, Switch, useHistory } from "react-router";
 
 import AppScreen from "./screens/AppSreen";
 import LogIn from "./screens/LogIn";
 
-import Pagination from "@material-ui/lab/Pagination";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-
 import { BodyInner, GlobalStyle } from "./assets/styles/GlobalStyle";
-import { Colors } from "./assets/styles/Colors";
+
 import MobileNavigation from "./containers/MobileNavigation";
 
 import firebase from "./config/firebase-config";
-import { getUserInfo } from "./redux/AuthUser.slice";
-import { useAppDispatch } from "./redux/hook";
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      "& .MuiPaginationItem-root": {
-        color: Colors.bodyFontColor,
-        fontSize: "1.2rem",
-      },
-      "& .MuiPaginationItem-root:hover": {
-        backgroundColor: Colors.secondaryFontColor,
-      },
-      "& .Mui-selected": {
-        backgroundColor: Colors.secondaryFontColor,
-      },
-    },
-  })
-);
 
 const App = () => {
   const history = useHistory();
-  const classes = useStyles();
-
-  const [name, setName] = useState("");
-  const [pPic, setPPic] = useState("");
-  const [currentUser, setCurrentUser] =
-    React.useState<firebase.User | null | boolean>(null);
-
-  const handleOnClick = async (provider: any) => {
-    const response = await socialMediaAuth(provider);
-    console.log(response);
-    history.push("/app");
-  };
-
-  const logOut = () => {
-    auth
-      .signOut()
-      .then(() => {
-        console.log("logout");
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-    history.push("/");
-  };
-
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    // auth.onAuthStateChanged((user) => {
-    //   setCurrentUser(user);
-    //   setPPic(user?.photoURL!);
-    //   setName(user?.displayName!);
-    // });
-    // if (currentUser === true) {
-    //   history.push("/app");
-    // }
-    // if (currentUser === false) {
-    //   history.push("/");
-    // }
-
-    dispatch(getUserInfo());
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user != null) {
+        history.push("/app");
+      }
+      if (user === null) {
+        history.push("/");
+      }
+    });
   }, []);
 
   return (
     <>
       <GlobalStyle />
       <BodyInner>
-        {currentUser ? (
-          <>
-            <h1 onClick={logOut}>logout</h1>
-            <h1>{name}</h1>
-            <img src={pPic} alt="" />
-          </>
-        ) : (
-          <>
-            <button onClick={() => handleOnClick(githubProvider)}>
-              github
-            </button>
-            <button onClick={() => handleOnClick(googleProvider)}>
-              google
-            </button>
-          </>
-        )}
-        {/* <div className={classes.root}>
-          <Pagination count={5} color="primary"></Pagination>
-        </div> */}
         <Switch>
-          <Route path="/app" exact component={AppScreen} />
           <Route path="/" exact component={LogIn} />
+          <Route path="/app" exact component={AppScreen} />
         </Switch>
       </BodyInner>
       <MobileNavigation />
@@ -114,3 +40,33 @@ const App = () => {
 };
 
 export default App;
+
+// import socialMediaAuth from "./utils/auth";
+// import Pagination from "@material-ui/lab/Pagination";
+// import { makeStyles, createStyles } from "@material-ui/core/styles";
+// import { Colors } from "./assets/styles/Colors";
+
+// const useStyles = makeStyles(() =>
+//   createStyles({
+//     root: {
+//       "& .MuiPaginationItem-root": {
+//         color: Colors.bodyFontColor,
+//         fontSize: "1.2rem",
+//       },
+//       "& .MuiPaginationItem-root:hover": {
+//         backgroundColor: Colors.secondaryFontColor,
+//       },
+//       "& .Mui-selected": {
+//         backgroundColor: Colors.secondaryFontColor,
+//       },
+//     },
+//   })
+// );
+
+{
+  /* <div className={classes.root}>
+          <Pagination count={5} color="primary"></Pagination>
+        </div> */
+}
+
+// useStyles();

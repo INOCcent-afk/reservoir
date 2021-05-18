@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 
 import Icon from "../../components/Icon";
@@ -9,8 +9,8 @@ import { Header, LoginHeader, Nav } from "./MobileNavigation.style";
 
 const MobileNavigation: FC = () => {
   const location = useLocation();
-
   const currentPath = location.pathname;
+
   return (
     <>
       {currentPath === "/" ? (
