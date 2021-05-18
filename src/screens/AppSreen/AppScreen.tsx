@@ -1,11 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 
 import { useHistory } from "react-router";
 
 import firebase from "../../config/firebase-config";
 
-const AppScreen = () => {
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
+import Loading from "../../components/Loading";
+
+const AppScreen: FC = () => {
   const history = useHistory();
+  const [show, setShow] = React.useState(false);
 
   const logOut = () => {
     firebase
@@ -20,10 +25,22 @@ const AppScreen = () => {
     history.push("/");
   };
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 3000);
+  }, [show]);
+
   return (
-    <div>
-      <h1 onClick={logOut}>LOGOUT</h1>
-    </div>
+    <>
+      {!show ? (
+        <Loading />
+      ) : (
+        <div>
+          <h1 onClick={logOut}>LOGOUT</h1>
+        </div>
+      )}
+    </>
   );
 };
 

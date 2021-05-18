@@ -16,11 +16,11 @@ import {
 } from "./Login.styles";
 
 import { githubProvider, googleProvider } from "../../config/authMethod";
-
-import firebase from "../../config/firebase-config";
+import Loading from "../../components/Loading";
 
 const LogIn = () => {
   const history = useHistory();
+  const [show, setShow] = React.useState(false);
 
   const handleLogIn = async (provider: any) => {
     await socialMediaAuth(provider);
@@ -28,34 +28,52 @@ const LogIn = () => {
     history.push("/app");
   };
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 3000);
+  }, []);
+
   return (
     <>
-      <LogoContainer>
-        <LogoBranding />
-      </LogoContainer>
-      <Container>
-        <Box>
-          <SocialMediaContainer>
-            <Title>
-              <h1>Welcome</h1>
-              <p>
-                By logging in, you accept our
-                <span>
-                  Privacy <br /> Policy
-                </span>
-                and
-                <span>Terms of Service</span>
-              </p>
-            </Title>
-            <div onClick={() => handleLogIn(githubProvider)}>
-              <Button icon={<Icon icon="github" />} text="Log in with Github" />
-            </div>
-            <div onClick={() => handleLogIn(googleProvider)}>
-              <Button icon={<Icon icon="google" />} text="Log in with Google" />
-            </div>
-          </SocialMediaContainer>
-        </Box>
-      </Container>
+      {!show ? (
+        <Loading />
+      ) : (
+        <>
+          <LogoContainer>
+            <LogoBranding />
+          </LogoContainer>
+          <Container>
+            <Box>
+              <SocialMediaContainer>
+                <Title>
+                  <h1>Welcome</h1>
+                  <p>
+                    By logging in, you accept our
+                    <span>
+                      Privacy <br /> Policy
+                    </span>
+                    and
+                    <span>Terms of Service</span>
+                  </p>
+                </Title>
+                <div onClick={() => handleLogIn(githubProvider)}>
+                  <Button
+                    icon={<Icon icon="github" />}
+                    text="Log in with Github"
+                  />
+                </div>
+                <div onClick={() => handleLogIn(googleProvider)}>
+                  <Button
+                    icon={<Icon icon="google" />}
+                    text="Log in with Google"
+                  />
+                </div>
+              </SocialMediaContainer>
+            </Box>
+          </Container>
+        </>
+      )}
     </>
   );
 };
