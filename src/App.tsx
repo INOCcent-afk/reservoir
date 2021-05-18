@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Route, Switch, useHistory } from "react-router";
 
@@ -10,11 +10,12 @@ import { BodyInner, GlobalStyle } from "./assets/styles/GlobalStyle";
 import MobileNavigation from "./containers/MobileNavigation";
 
 import firebase from "./config/firebase-config";
+import Header from "./containers/Header";
 
 const App = () => {
   const history = useHistory();
 
-  useEffect(() => {
+  React.useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
         history.push("/app");
@@ -28,6 +29,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
+      <Header />
       <BodyInner>
         <Switch>
           <Route path="/" exact component={LogIn} />

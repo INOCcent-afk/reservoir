@@ -36,9 +36,9 @@ const AppScreen: FC = () => {
       {!show ? (
         <Loading />
       ) : (
-        <div>
+        <>
           <h1 onClick={logOut}>LOGOUT</h1>
-        </div>
+        </>
       )}
     </>
   );

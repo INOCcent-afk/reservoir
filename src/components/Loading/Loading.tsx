@@ -22,8 +22,10 @@ const Loading: FC = () => {
 export default Loading;
 
 export const LoaderContainer = styled.div`
-  height: 100vh;
-  width: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
