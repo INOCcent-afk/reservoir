@@ -1,39 +1,36 @@
 import React, { FC } from "react";
 import { useHistory } from "react-router";
-import styled from "styled-components";
+
 import Icon from "../../components/Icon";
 import SearchInput from "../../components/SearchInput/SearchInput";
 
+import { SearchPageTitle } from "./Search.styles";
+
 const Search: FC = () => {
+  const [width, setWidth] = React.useState(window.innerWidth);
   const history = useHistory();
+
+  React.useEffect(() => {
+    if (width >= 758) {
+      history.push("/app");
+    }
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
 
   return (
     <>
-      <SearchPageContainer>
-        <SearchPageTitle>
-          <div onClick={() => history.goBack()}>
-            <Icon icon="rightarrow" />
-          </div>
-          <SearchInput />
-        </SearchPageTitle>
-      </SearchPageContainer>
+      <SearchPageTitle>
+        <div onClick={() => history.goBack()}>
+          <Icon icon="rightarrow" />
+        </div>
+        <SearchInput />
+      </SearchPageTitle>
     </>
   );
 };
 
 export default Search;
-
-export const SearchPageContainer = styled.div``;
-
-export const SearchPageTitle = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10px;
-
-  svg {
-    width: 25px;
-    height: 25px;
-    fill: none;
-  }
-`;

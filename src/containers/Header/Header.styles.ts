@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../../assets/styles/Colors";
+import { ScreenSize } from "../../assets/styles/ScreenSize";
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -11,6 +12,10 @@ export const MobileHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
+    display: none;
+  }
 `;
 
 export const ProfilePictureContainer = styled.div`
