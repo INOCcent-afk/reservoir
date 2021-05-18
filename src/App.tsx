@@ -11,6 +11,7 @@ import MobileNavigation from "./containers/MobileNavigation";
 
 import firebase from "./config/firebase-config";
 import Header from "./containers/Header";
+import Search from "./screens/Search";
 
 const App = () => {
   const history = useHistory();
@@ -34,6 +35,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={LogIn} />
           <Route path="/app" exact component={AppScreen} />
+          <Route path="/search" exact component={Search} />
         </Switch>
       </BodyInner>
       <MobileNavigation />
