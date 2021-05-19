@@ -3,7 +3,7 @@ import React, { FC, ReactNode } from "react";
 import { ButtonContainer } from "./Button.styles";
 
 type Props = {
-  icon: ReactNode;
+  icon?: ReactNode;
   text: string;
 };
 
