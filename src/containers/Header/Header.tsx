@@ -18,8 +18,16 @@ const Header: FC = () => {
   const [profilePicture, setProfilePicture] = React.useState("");
   const [show, setShow] = React.useState(false);
 
+  const check = (path: string) => {
+    const matches = window.location.pathname.includes(path);
+
+    return matches;
+  };
+
   history.listen(() => {
-    window.location.pathname.includes("/app") ? setShow(true) : setShow(false);
+    check("/app") || check("/cart") || check("/profile")
+      ? setShow(true)
+      : setShow(false);
   });
 
   const logOut = () => {
@@ -59,7 +67,6 @@ const Header: FC = () => {
           <DesktopHeader>
             <LogoBranding />
             <SearchInput />
-
             <ProfilePictureContainer onClick={logOut}>
               <div className="image-container">
                 <img src={profilePicture} alt="user_picture" />

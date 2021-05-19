@@ -8,4 +8,5 @@ export const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: ${Colors.primaryBackgroundColor};
+  margin-bottom: 10px;
 `;

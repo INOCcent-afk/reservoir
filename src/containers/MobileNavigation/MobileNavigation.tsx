@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useHistory, useLocation } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import Icon from "../../components/Icon";
 import LogoBranding from "../../components/LogoBranding";
@@ -34,9 +34,15 @@ const MobileNavigation: FC = () => {
       ) : (
         <Header>
           <Nav>
-            <Icon icon="home" />
-            <Icon icon="cart" />
-            <Icon icon="profile" />
+            <NavLink to="/app" activeClassName="activeMobileLink">
+              <Icon icon="home" />
+            </NavLink>
+            <NavLink to="/cart" activeClassName="activeMobileLink">
+              <Icon icon="cart" />
+            </NavLink>
+            <NavLink to="/profile" activeClassName="activeMobileLink">
+              <Icon icon="profile" />
+            </NavLink>
           </Nav>
         </Header>
       )}
