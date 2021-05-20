@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     html { 
         font-size: 10px;
+        height: 100%;
     }
 
     body {
@@ -19,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
         color: ${Colors.bodyFontColor};
         font-family: 'Inter', sans-serif;
         overflow: hidden;
+        height: 100%;
     }
 
     h1 { 
