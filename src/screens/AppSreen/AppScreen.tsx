@@ -4,13 +4,10 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import Loading from "../../components/Loading";
 import Box from "../../containers/Box";
-import { useAppDispatch } from "../../redux/hook";
-import { fetchProducts } from "../../redux/Shop.slice";
+import ProductContainer from "../../containers/ProductContainer";
 
 const AppScreen: FC = () => {
   const [show, setShow] = React.useState(false);
-
-  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -27,9 +24,7 @@ const AppScreen: FC = () => {
           <Box>
             <h1>HELLO WORLD</h1>
           </Box>
-          <Box>
-            <h1>HELLO WORLD</h1>
-          </Box>
+          <ProductContainer />
           <Box>
             <h1>HELLO WORLD</h1>
           </Box>

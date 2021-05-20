@@ -32,7 +32,7 @@ const LogIn = () => {
     setTimeout(() => {
       setShow(true);
     }, 1500);
-  }, []);
+  }, [show]);
 
   return (
     <>

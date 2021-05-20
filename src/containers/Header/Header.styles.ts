@@ -33,6 +33,7 @@ export const ProfilePictureContainer = styled.div`
     width: 30px;
     height: 30px;
     border-radius: 100%;
+    cursor: pointer;
   }
 
   .circle {

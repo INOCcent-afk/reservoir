@@ -47,7 +47,16 @@ const Product: FC<Props> = ({
 export default Product;
 
 export const ProductHeader = styled.div``;
-export const ProductImage = styled.div``;
+export const ProductImage = styled.div`
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+
+  img {
+    width: 100%;
+  }
+`;
 export const ProductInfo = styled.div``;
 export const ProductTitle = styled.div``;
 export const ProductPrice = styled.div``;

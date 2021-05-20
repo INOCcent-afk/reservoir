@@ -18,9 +18,9 @@ interface ProductsInfo {
   id: number;
   title: string;
   price: number;
-  description?: string;
+  description: string;
   category: string;
-  image?: string;
+  image: string;
 }
 interface CartItemInfo {
   id: number;

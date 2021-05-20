@@ -63,6 +63,9 @@ export const GlobalStyle = createGlobalStyle`
 
 export const BodyInner = styled.div`
   margin: 0 10px;
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: 8px;
 
   @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
     max-width: 768px;
@@ -74,13 +77,14 @@ export const BodyInner = styled.div`
     max-width: 1300px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     padding: 0 10px;
 
     > :nth-child(1) {
-      flex-basis: 30%;
+      flex-basis: 25%;
     }
     > :nth-child(2) {
-      flex-basis: 60%;
+      flex-basis: 50%;
       margin: 0 10px;
     }
     > :nth-child(3) {
