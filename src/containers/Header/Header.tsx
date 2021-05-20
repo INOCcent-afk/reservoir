@@ -46,6 +46,7 @@ const Header: FC = () => {
   React.useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       setProfilePicture(user?.photoURL!);
+      console.log(user?.photoURL);
     });
   }, []);
 
