@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  max-height: 80vh;
+  max-height: calc(85vh - 30px);
   overflow: hidden;
 `;
 

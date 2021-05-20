@@ -5,11 +5,10 @@ import { ScreenSize } from "../../assets/styles/ScreenSize";
 export const Header = styled.header`
   width: 100%;
   padding: 20px 40px;
-  position: fixed;
-  bottom: 0;
   border-top: 1px solid ${Colors.secondaryBackgroundColor};
+  background: ${Colors.body};
 
-  @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
+  @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
     display: none;
   }
 `;
@@ -32,6 +31,8 @@ export const LoginHeader = styled(Header)`
   border-top: none;
   padding: 20px;
   max-width: 1300px;
+  position: fixed;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
 

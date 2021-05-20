@@ -4,7 +4,6 @@ import { ScreenSize } from "../../assets/styles/ScreenSize";
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  top: 0;
   padding: 20px;
 
   @media only screen and (min-width: ${ScreenSize.laptopScreen}) {

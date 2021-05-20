@@ -8,6 +8,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
+  & > div {
+    width: 400px !important;
+  }
 `;
 
 export const SocialMediaContainer = styled.div`

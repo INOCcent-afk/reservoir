@@ -4,7 +4,11 @@ export const SearchPageTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10px;
+  padding: 10px;
+
+  &:parent {
+    margin: 0;
+  }
 
   svg {
     width: 25px;

@@ -8,6 +8,7 @@ export const LoaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  max-height: calc(85vh - 30px);
   svg {
     width: 80px;
     height: 80px;

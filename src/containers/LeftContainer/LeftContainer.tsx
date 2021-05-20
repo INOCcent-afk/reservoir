@@ -4,7 +4,7 @@ import Box from "../Box";
 
 const LeftContainer: FC = () => {
   return (
-    <div className="none-sm block-md">
+    <div className="none-sm block-lg">
       <Box>
         <h1>LEFT CONTAINER</h1>
       </Box>

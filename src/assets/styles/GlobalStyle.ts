@@ -62,21 +62,23 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const BodyInner = styled.div`
-  margin: 0 10px;
-  max-height: 80vh;
+  margin: 0 10px 10px 10px;
+  max-height: 100%;
   overflow: hidden;
   border-radius: 8px;
 
   @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
     max-width: 768px;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
     padding: 0 10px;
+    width: 100%;
+    height: 100%;
   }
 
   @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
     max-width: 1300px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 0 10px;
 
@@ -91,7 +93,23 @@ export const BodyInner = styled.div`
       flex-basis: 20%;
     }
   }
+
   @media only screen and (min-width: ${ScreenSize.desktopScreen}) {
     padding: 0;
+  }
+`;
+
+export const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
+    justify-content: unset;
+  }
+
+  @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
+    justify-content: unset;
   }
 `;

@@ -37,7 +37,6 @@ const Product: FC<Props> = ({
             </ProductPrice>
           </ProductInfo>
         </ProductHeader>
-        <ProductDescription>{description}</ProductDescription>
         <Button text="ADD TO CART" />
       </Box>
     </>
@@ -46,7 +45,10 @@ const Product: FC<Props> = ({
 
 export default Product;
 
-export const ProductHeader = styled.div``;
+export const ProductHeader = styled.div`
+  display: flex;
+  margin: 10px 0 20px 0;
+`;
 export const ProductImage = styled.div`
   overflow: hidden;
   width: 100px;
@@ -57,7 +59,12 @@ export const ProductImage = styled.div`
     width: 100%;
   }
 `;
-export const ProductInfo = styled.div``;
+export const ProductInfo = styled.div`
+  margin-left: 20px;
+
+  p {
+    margin-bottom: 10px;
+  }
+`;
 export const ProductTitle = styled.div``;
 export const ProductPrice = styled.div``;
-export const ProductDescription = styled.div``;

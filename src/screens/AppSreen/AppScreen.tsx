@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import Loading from "../../components/Loading";
-import Box from "../../containers/Box";
 import LeftContainer from "../../containers/LeftContainer";
 import ProductContainer from "../../containers/ProductContainer";
 import RightContainer from "../../containers/RightContainer";

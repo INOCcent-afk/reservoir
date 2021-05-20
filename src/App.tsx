@@ -5,8 +5,6 @@ import { Route, Switch, useHistory } from "react-router";
 import AppScreen from "./screens/AppSreen";
 import LogIn from "./screens/LogIn";
 
-import { BodyInner, GlobalStyle } from "./assets/styles/GlobalStyle";
-
 import MobileNavigation from "./containers/MobileNavigation";
 
 import firebase from "./config/firebase-config";
@@ -16,6 +14,11 @@ import Cart from "./screens/Cart";
 import Profile from "./screens/Profile";
 
 import "./assets/styles/Utils.css";
+import {
+  AppContainer,
+  BodyInner,
+  GlobalStyle,
+} from "./assets/styles/GlobalStyle";
 
 const App = () => {
   const history = useHistory();
@@ -33,18 +36,20 @@ const App = () => {
 
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <BodyInner>
-        <Switch>
-          <Route path="/" exact component={LogIn} />
-          <Route path="/app" exact component={AppScreen} />
-          <Route path="/search" exact component={Search} />
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/profile" exact component={Profile} />
-        </Switch>
-      </BodyInner>
-      <MobileNavigation />
+      <AppContainer>
+        <GlobalStyle />
+        <Header />
+        <BodyInner>
+          <Switch>
+            <Route path="/" exact component={LogIn} />
+            <Route path="/app" exact component={AppScreen} />
+            <Route path="/search" exact component={Search} />
+            <Route path="/cart" exact component={Cart} />
+            <Route path="/profile" exact component={Profile} />
+          </Switch>
+        </BodyInner>
+        <MobileNavigation />
+      </AppContainer>
     </>
   );
 };
