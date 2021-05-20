@@ -14,8 +14,7 @@ export const Wrapper = styled.div`
   padding: 0 5px;
 
   ::-webkit-scrollbar {
-    width: 10px;
-    margin-bottom: 10px;
+    width: 0;
   }
 
   ::-webkit-scrollbar-track {

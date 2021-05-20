@@ -7,6 +7,8 @@ export const Header = styled.header`
   padding: 20px 40px;
   border-top: 1px solid ${Colors.secondaryBackgroundColor};
   background: ${Colors.body};
+  position: fixed;
+  bottom: 0;
 
   @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
     display: none;
@@ -32,7 +34,7 @@ export const LoginHeader = styled(Header)`
   padding: 20px;
   max-width: 1300px;
   position: fixed;
-  bottom: 0;
+
   left: 50%;
   transform: translate(-50%, 0);
 

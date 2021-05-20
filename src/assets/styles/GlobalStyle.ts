@@ -11,7 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     html { 
         font-size: 10px;
-        height: 100%;
     }
 
     body {
@@ -20,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
         color: ${Colors.bodyFontColor};
         font-family: 'Inter', sans-serif;
         overflow: hidden;
-        height: 100%;
     }
 
     h1 { 
@@ -64,14 +62,14 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const BodyInner = styled.div`
-  margin: 0 10px 10px 10px;
+  margin: 0 10px 80px 10px;
   max-height: 100%;
   overflow: hidden;
   border-radius: 8px;
 
   @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
     max-width: 768px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 20px auto;
     padding: 0 10px;
     width: 100%;
     height: 100%;
@@ -80,9 +78,10 @@ export const BodyInner = styled.div`
   @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
     max-width: 1300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 0 10px;
+    margin: 0 auto 20px auto;
 
     > :nth-child(1) {
       flex-basis: 25%;
@@ -104,7 +103,7 @@ export const BodyInner = styled.div`
 export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100vh;
 
   @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
