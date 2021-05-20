@@ -50,12 +50,15 @@ const Header: FC = () => {
   //   });
   // }, []);
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      setProfilePicture(user?.photoURL!);
-      console.log(user?.photoURL);
-    }
-  });
+  React.useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        let picture = user.photoURL;
+        setProfilePicture(picture!);
+        console.log(picture);
+      }
+    });
+  }, []);
 
   return (
     <>
