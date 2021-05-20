@@ -6,4 +6,5 @@ export const Colors = {
   primaryFontColor: "#5d7290",
   primaryFontColor60: "#5d729060",
   secondaryFontColor: "#fd4d4d",
+  secondaryFontColor80: "#fd4d4d80",
 };

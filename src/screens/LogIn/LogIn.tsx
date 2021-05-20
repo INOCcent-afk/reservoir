@@ -59,12 +59,14 @@ const LogIn = () => {
                 </Title>
                 <div onClick={() => handleLogIn(githubProvider)}>
                   <Button
+                    type="normalBTN"
                     icon={<Icon icon="github" />}
                     text="Log in with Github"
                   />
                 </div>
                 <div onClick={() => handleLogIn(googleProvider)}>
                   <Button
+                    type="normalBTN"
                     icon={<Icon icon="google" />}
                     text="Log in with Google"
                   />

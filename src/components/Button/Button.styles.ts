@@ -29,3 +29,13 @@ export const ButtonContainer = styled.button`
     font-size: 15px;
   }
 `;
+
+export const ProductButton = styled(ButtonContainer)`
+  background: ${Colors.secondaryFontColor};
+
+  align-self: flex-end;
+
+  &:hover {
+    background: ${Colors.secondaryFontColor80};
+  }
+`;

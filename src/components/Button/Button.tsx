@@ -1,19 +1,28 @@
 import React, { FC, ReactNode } from "react";
 
-import { ButtonContainer } from "./Button.styles";
+import { ButtonContainer, ProductButton } from "./Button.styles";
 
-type Props = {
-  icon?: ReactNode;
-  text: string;
-};
+type Props = { icon?: ReactNode; text: string } & (
+  | {
+      type: "normalBTN";
+    }
+  | { type: "productBTN" }
+);
 
-const Button: FC<Props> = ({ icon, text }: Props) => {
+const Button: FC<Props> = (props) => {
   return (
     <>
-      <ButtonContainer>
-        {icon}
-        <p>{text}</p>
-      </ButtonContainer>
+      {props.type === "normalBTN" ? (
+        <ButtonContainer>
+          {props.icon}
+          <p>{props.text}</p>
+        </ButtonContainer>
+      ) : null}
+      {props.type === "productBTN" ? (
+        <ProductButton>
+          <p> {props.text}</p>
+        </ProductButton>
+      ) : null}
     </>
   );
 };

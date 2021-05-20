@@ -31,7 +31,6 @@ const ProductContainer: FC = () => {
                 id={product.id}
                 key={product.id}
                 price={product.price}
-                description={product.description}
                 image={product.image}
                 category={product.category}
               />

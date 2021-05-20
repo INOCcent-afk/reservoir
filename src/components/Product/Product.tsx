@@ -1,25 +1,19 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { Colors } from "../../assets/styles/Colors";
 import Box from "../../containers/Box";
 import Button from "../Button";
 
 type Props = {
   image: string;
-  description: string;
+
   price: number;
   id: number;
   category: string;
   title: string;
 };
 
-const Product: FC<Props> = ({
-  image,
-  description,
-  price,
-  id,
-  category,
-  title,
-}: Props) => {
+const Product: FC<Props> = ({ image, price, id, category, title }: Props) => {
   return (
     <>
       <Box>
@@ -37,7 +31,7 @@ const Product: FC<Props> = ({
             </ProductPrice>
           </ProductInfo>
         </ProductHeader>
-        <Button text="ADD TO CART" />
+        <Button type="productBTN" text="ADD TO CART" />
       </Box>
     </>
   );
@@ -51,6 +45,7 @@ export const ProductHeader = styled.div`
 `;
 export const ProductImage = styled.div`
   overflow: hidden;
+  min-width: 100px;
   width: 100px;
   height: 100px;
   border-radius: 100%;
