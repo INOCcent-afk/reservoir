@@ -4,7 +4,9 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import Loading from "../../components/Loading";
 import Box from "../../containers/Box";
+import LeftContainer from "../../containers/LeftContainer";
 import ProductContainer from "../../containers/ProductContainer";
+import RightContainer from "../../containers/RightContainer";
 
 const AppScreen: FC = () => {
   const [show, setShow] = React.useState(false);
@@ -21,13 +23,9 @@ const AppScreen: FC = () => {
         <Loading />
       ) : (
         <>
-          <Box>
-            <h1>HELLO WORLD</h1>
-          </Box>
+          <LeftContainer />
           <ProductContainer />
-          <Box>
-            <h1>HELLO WORLD</h1>
-          </Box>
+          <RightContainer />
         </>
       )}
     </>
@@ -35,5 +33,3 @@ const AppScreen: FC = () => {
 };
 
 export default AppScreen;
-
-// onClick={() => dispatch(fetchProducts())}

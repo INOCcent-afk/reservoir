@@ -15,6 +15,8 @@ import Search from "./screens/Search";
 import Cart from "./screens/Cart";
 import Profile from "./screens/Profile";
 
+import "./assets/styles/Utils.css";
+
 const App = () => {
   const history = useHistory();
 

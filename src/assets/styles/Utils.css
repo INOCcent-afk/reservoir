@@ -1,0 +1,12 @@
+.none-sm {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-md {
+    display: flex;
+  }
+  .block-md {
+    display: block;
+  }
+}
