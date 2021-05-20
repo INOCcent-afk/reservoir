@@ -43,22 +43,13 @@ const Header: FC = () => {
     history.push("/");
   };
 
-  // React.useEffect(() => {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     setProfilePicture(user?.photoURL!);
-  //     console.log(user?.photoURL);
-  //   });
-  // }, []);
-
-  React.useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        let picture = user.photoURL;
-        setProfilePicture(picture!);
-        console.log(picture);
-      }
-    });
-  }, []);
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user !== null) {
+      setProfilePicture(user?.photoURL!);
+      console.log(user?.photoURL);
+    } else {
+    }
+  });
 
   return (
     <>
