@@ -43,13 +43,13 @@ const Header: FC = () => {
     history.push("/");
   };
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user !== null) {
-      setProfilePicture(user?.photoURL!);
-      console.log(user?.photoURL);
-    } else {
-    }
-  });
+  React.useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user != null) {
+        console.log(`header component ${user.photoURL}`);
+      }
+    });
+  }, []);
 
   return (
     <>

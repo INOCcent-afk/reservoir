@@ -27,6 +27,7 @@ const App = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
         history.push("/app");
+        console.log(`app component ${user.photoURL}`);
       }
       if (user === null) {
         history.push("/");
