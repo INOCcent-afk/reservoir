@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 import Button from "../../components/Button";
 import Icon from "../../components/Icon";
@@ -29,10 +29,14 @@ const LogIn = () => {
   };
 
   React.useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setShow(true);
     }, 1500);
-  }, [show]);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [history]);
 
   return (
     <>

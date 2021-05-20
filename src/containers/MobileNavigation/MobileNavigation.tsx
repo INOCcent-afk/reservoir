@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useHistory, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 
 import Icon from "../../components/Icon";

@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { Colors } from "../../assets/styles/Colors";
 import Box from "../../containers/Box";
 import Button from "../Button";
 

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
 import { Link, useHistory } from "react-router-dom";
 import Icon from "../../components/Icon";

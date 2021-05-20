@@ -78,10 +78,8 @@ export default App;
 //   })
 // );
 
-{
-  /* <div className={classes.root}>
+/* <div className={classes.root}>
           <Pagination count={5} color="primary"></Pagination>
         </div> */
-}
 
 // useStyles();

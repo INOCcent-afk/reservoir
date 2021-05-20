@@ -4,7 +4,6 @@ import Loading from "../../components/Loading";
 import Product from "../../components/Product";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchProducts } from "../../redux/Shop.slice";
-import Box from "../Box";
 
 import { Wrapper, Container } from "./ProductContainer.styles";
 
@@ -13,7 +12,7 @@ const ProductContainer: FC = () => {
 
   React.useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [dispatch]);
 
   const products = useAppSelector((state) => state.cart.products);
   const status = useAppSelector((state) => state.cart.status);
