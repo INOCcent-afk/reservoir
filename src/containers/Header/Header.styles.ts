@@ -82,10 +82,10 @@ export const DesktopHeader = styled.div`
   @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
     max-width: 1300px;
     > :nth-child(1) {
-      flex-basis: 33%;
+      flex-basis: 25%;
     }
     > :nth-child(2) {
-      flex-basis: 60%;
+      flex-basis: 45%;
     }
     > :nth-child(3) {
       flex-basis: 25%;

@@ -78,7 +78,7 @@ export const BodyInner = styled.div`
   @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
     max-width: 1300px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 0 10px;
     margin: 0 auto 20px auto;
@@ -87,11 +87,11 @@ export const BodyInner = styled.div`
       flex-basis: 25%;
     }
     > :nth-child(2) {
-      flex-basis: 50%;
+      flex-basis: 45%;
       margin: 0 10px;
     }
     > :nth-child(3) {
-      flex-basis: 20%;
+      flex-basis: 25%;
     }
   }
 

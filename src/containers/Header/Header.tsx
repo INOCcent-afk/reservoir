@@ -68,7 +68,9 @@ const Header: FC = () => {
             </Link>
           </MobileHeader>
           <DesktopHeader>
-            <LogoBranding />
+            <Link to="/app">
+              <LogoBranding />
+            </Link>
             <SearchInput />
             <ProfilePictureContainer onClick={logOut}>
               <div className="image-container">

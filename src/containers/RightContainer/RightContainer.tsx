@@ -1,12 +1,12 @@
 import React, { FC } from "react";
-import Box from "../Box";
+import ProfileCard from "../../components/ProfileCard";
+import PostContainer from "../PostContainer";
 
 const RightContainer: FC = () => {
   return (
     <div className="none-sm block-lg">
-      <Box>
-        <h1>RIGHT CONTAINER</h1>
-      </Box>
+      <ProfileCard />
+      <PostContainer />
     </div>
   );
 };
