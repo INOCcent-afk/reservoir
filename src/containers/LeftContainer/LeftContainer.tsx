@@ -43,7 +43,9 @@ const LeftContainer: FC = () => {
       {checkPath ? (
         <>
           <h1>Your cart</h1>
-          <p>Total: ₱{totalPrice.toFixed(2)}</p>
+          <p>
+            You have a total of <span>₱{totalPrice.toFixed(2)}</span>
+          </p>
         </>
       ) : (
         <>

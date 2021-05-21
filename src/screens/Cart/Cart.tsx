@@ -1,5 +1,6 @@
 import React from "react";
-import Box from "../../containers/Box";
+
+import CartContainer from "../../containers/CartContainer";
 import LeftContainer from "../../containers/LeftContainer";
 import RightContainer from "../../containers/RightContainer";
 
@@ -7,9 +8,7 @@ const Cart = () => {
   return (
     <>
       <LeftContainer />
-      <Box>
-        <h1>CART</h1>
-      </Box>
+      <CartContainer />
       <RightContainer />
     </>
   );
