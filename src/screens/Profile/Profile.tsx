@@ -4,28 +4,19 @@ import ProfileCard from "../../components/ProfileCard";
 import Loading from "../../components/Loading";
 import LeftContainer from "../../containers/LeftContainer";
 import RightContainer from "../../containers/RightContainer";
+import { useAppSelector } from "../../redux/hook";
 
 const Profile = () => {
-  const [show, setShow] = React.useState(false);
-
-  React.useEffect(() => {
-    let timer = setTimeout(() => {
-      setShow(true);
-    }, 800);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  const status = useAppSelector((state) => state.cart.status);
 
   return (
     <>
-      {!show ? (
+      {status === "loading" ? (
         <Loading />
       ) : (
         <>
           <LeftContainer />
-          <ProfileCard />
+          <ProfileCard type="bigcard" />
           <RightContainer />
         </>
       )}

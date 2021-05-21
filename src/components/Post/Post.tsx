@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import styled from "styled-components";
-import { Colors } from "../../assets/styles/Colors";
+
+import { Container } from "./Post.styles";
 
 type Props = {
   posts: any[];
@@ -10,9 +10,9 @@ const Post: FC<Props> = ({ posts }: Props) => {
   return (
     <>
       {posts.map((post) => (
-        <Container>
-          <span key={post.id}>{post.title}</span>
-          <p>{post.body}</p>
+        <Container key={post.id}>
+          <span>{post.title.slice(0, -5)}</span>
+          <p>{post.body.slice(0, -80)}</p>
         </Container>
       ))}
     </>
@@ -20,13 +20,3 @@ const Post: FC<Props> = ({ posts }: Props) => {
 };
 
 export default Post;
-
-export const Container = styled.div`
-  border-top: 1px solid ${Colors.primaryFontColor60};
-  padding: 10px;
-  span,
-  p {
-    font-size: 14px;
-    margin: 0;
-  }
-`;

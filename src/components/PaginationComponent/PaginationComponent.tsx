@@ -1,10 +1,11 @@
-import React, { ChangeEvent, FC } from "react";
+import React, { FC } from "react";
 
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { Colors } from "../../assets/styles/Colors";
 
 import Pagination from "@material-ui/lab/Pagination";
-import styled from "styled-components";
+
+import { PaginationContainer } from "./PaginationComponent.styles";
 
 type Props = {
   postsPerPage: number;
@@ -26,7 +27,9 @@ const useStyles = makeStyles(() =>
       "& .MuiPaginationItem-root:hover": {
         backgroundColor: Colors.secondaryFontColor,
       },
-      "& .Mui-selected": {},
+      "& .Mui-selected": {
+        backgroundColor: Colors.secondaryFontColor,
+      },
     },
   })
 );
@@ -67,15 +70,3 @@ const PaginationComponent: FC<Props> = ({
 };
 
 export default PaginationComponent;
-
-export const PaginationContainer = styled.div`
-  background: ${Colors.primaryFontColor60};
-  padding: 10px;
-
-  ul {
-    width: 100%;
-  }
-  nav {
-    justify-content: space-between;
-  }
-`;
