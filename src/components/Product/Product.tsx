@@ -1,7 +1,12 @@
 import React, { FC } from "react";
-import styled from "styled-components";
+
+import { useAppDispatch } from "../../redux/hook";
+import { addToCart } from "../../redux/Shop.slice";
+
 import Box from "../../containers/Box";
 import Button from "../Button";
+
+import styled from "styled-components";
 
 type Props = {
   image: string;
@@ -13,6 +18,8 @@ type Props = {
 };
 
 const Product: FC<Props> = ({ image, price, id, category, title }: Props) => {
+  const dispatch = useAppDispatch();
+
   return (
     <>
       <Box>
@@ -30,7 +37,9 @@ const Product: FC<Props> = ({ image, price, id, category, title }: Props) => {
             </ProductPrice>
           </ProductInfo>
         </ProductHeader>
-        <Button type="productBTN" text="ADD TO CART" />
+        <div onClick={() => dispatch(addToCart(id))}>
+          <Button type="productBTN" text="ADD TO CART" />
+        </div>
       </Box>
     </>
   );

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { getProducts as getProductsFromApi } from "../utils/api/fetchProducts";
 
@@ -10,23 +10,33 @@ const initialState: Products = {
 
 type Products = {
   products: ProductsInfo[];
-  cart: CartItemInfo[];
+  cart: CartInfo[];
   status: string | null;
 };
 
-interface ProductsInfo {
+type ProductsInfo = {
   id: number;
   title: string;
   price: number;
   description: string;
   category: string;
   image: string;
-}
-interface CartItemInfo {
-  id: number;
-  title: string;
-  price: number;
-}
+  qty: number;
+};
+type CartInfo = {
+  id?: number;
+  title?: string;
+  price?: number;
+  description?: string;
+  category?: string;
+  image?: string;
+  qty?: number;
+};
+
+type Qty = {
+  id?: number;
+  qty: number;
+};
 
 export const fetchProducts: any = createAsyncThunk(
   "products/fetchProducts",
@@ -39,7 +49,42 @@ export const fetchProducts: any = createAsyncThunk(
 export const shopSlice = createSlice({
   name: "Shop",
   initialState,
-  reducers: {},
+  reducers: {
+    addToCart: (state, action: PayloadAction<number | undefined>) => {
+      const item = state.products.find((prod) => prod.id === action.payload);
+
+      const inCart = state.cart.find((item) =>
+        item.id === action.payload ? true : false
+      );
+
+      return {
+        ...state,
+        cart: inCart
+          ? state.cart.map((item) =>
+              item.id === action.payload
+                ? { ...item, qty: item.qty! + 1 }
+                : item
+            )
+          : [...state.cart, { ...item, qty: 1 }],
+      };
+    },
+    removeFromCart: (state, action: PayloadAction<number | undefined>) => {
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload),
+      };
+    },
+    adjustQty: (state, action: PayloadAction<Qty>) => {
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, qty: +action.payload.qty }
+            : item
+        ),
+      };
+    },
+  },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
       state.status = "loading";
@@ -53,5 +98,7 @@ export const shopSlice = createSlice({
     },
   },
 });
+
+export const { addToCart, removeFromCart, adjustQty } = shopSlice.actions;
 
 export default shopSlice.reducer;
