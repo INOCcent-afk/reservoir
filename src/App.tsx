@@ -58,25 +58,6 @@ export default App;
 
 // import socialMediaAuth from "./utils/auth";
 // import Pagination from "@material-ui/lab/Pagination";
-// import { makeStyles, createStyles } from "@material-ui/core/styles";
-// import { Colors } from "./assets/styles/Colors";
-
-// const useStyles = makeStyles(() =>
-//   createStyles({
-//     root: {
-//       "& .MuiPaginationItem-root": {
-//         color: Colors.bodyFontColor,
-//         fontSize: "1.2rem",
-//       },
-//       "& .MuiPaginationItem-root:hover": {
-//         backgroundColor: Colors.secondaryFontColor,
-//       },
-//       "& .Mui-selected": {
-//         backgroundColor: Colors.secondaryFontColor,
-//       },
-//     },
-//   })
-// );
 
 /* <div className={classes.root}>
           <Pagination count={5} color="primary"></Pagination>

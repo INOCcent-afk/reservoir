@@ -1,19 +1,19 @@
 import React, { FC } from "react";
-import Pagination from "../../components/Pagination";
+import Loading from "../../components/Loading";
+
+import PaginationComponent from "../../components/PaginationComponent";
 import Post from "../../components/Post";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchPosts } from "../../redux/Posts.slice";
+import Box from "../Box";
 
 const PostContainer: FC = () => {
   const dispatch = useAppDispatch();
 
-  //   const [posts, setPosts] = React.useState<any[]>([]);
-  //   const [loading, setLoading] = React.useState(false);
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const [postsPerPage] = React.useState(3);
-
   const posts = useAppSelector((state) => state.posts.posts);
   const status = useAppSelector((state) => state.posts.status);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [postsPerPage] = React.useState(5);
 
   React.useEffect(() => {
     dispatch(fetchPosts());
@@ -23,18 +23,22 @@ const PostContainer: FC = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
-
   return (
-    <>
-      <h1 className="text-primary mb-3">My Blog</h1>
-      <Post posts={currentPosts} />
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={posts.length}
-        paginate={paginate}
-      />
-    </>
+    <Box>
+      {status === "loading" ? (
+        <Loading />
+      ) : (
+        <>
+          <Post posts={currentPosts} />
+          <PaginationComponent
+            postsPerPage={postsPerPage}
+            totalPosts={posts.length}
+            currentPage={setCurrentPage}
+            page={currentPage}
+          />
+        </>
+      )}
+    </Box>
   );
 };
 

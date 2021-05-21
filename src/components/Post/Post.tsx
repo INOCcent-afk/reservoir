@@ -6,13 +6,11 @@ type Props = {
 
 const Post: FC<Props> = ({ posts }: Props) => {
   return (
-    <div>
+    <>
       {posts.map((post) => (
-        <li key={post.id} className="list-group-item">
-          {post.title}
-        </li>
+        <p key={post.id}>{post.title}</p>
       ))}
-    </div>
+    </>
   );
 };
 
