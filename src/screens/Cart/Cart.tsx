@@ -1,16 +1,32 @@
 import React from "react";
-import Box from "../../containers/Box";
+import Loading from "../../components/Loading";
+
+import CartContainer from "../../containers/CartContainer";
 import LeftContainer from "../../containers/LeftContainer";
 import RightContainer from "../../containers/RightContainer";
 
+import { useAppSelector } from "../../redux/hook";
+
 const Cart = () => {
+  const [show, setShow] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 800);
+  }, []);
+
   return (
     <>
-      <LeftContainer />
-      <Box>
-        <h1>CART</h1>
-      </Box>
-      <RightContainer />
+      {!show ? (
+        <Loading />
+      ) : (
+        <>
+          <LeftContainer />
+          <CartContainer />
+          <RightContainer />
+        </>
+      )}
     </>
   );
 };
