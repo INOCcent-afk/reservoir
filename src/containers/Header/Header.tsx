@@ -47,7 +47,6 @@ const Header: FC = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setProfilePicture(user?.photoURL!);
-        console.log(user);
       }
     });
   }, []);

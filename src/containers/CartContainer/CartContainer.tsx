@@ -1,5 +1,7 @@
 import React from "react";
-import Product from "../../components/Product";
+
+import CartItem from "../../components/CartItem";
+
 import { useAppSelector } from "../../redux/hook";
 
 import {
@@ -15,13 +17,14 @@ const CartContainer = () => {
       <Container>
         <Wrapper>
           {cartItems.map((item) => (
-            <Product
+            <CartItem
               title={item.title!}
               price={item.price!}
               key={item.id!}
               id={item.id!}
               image={item.image!}
               category={item.category!}
+              qty={item.qty!}
             />
           ))}
         </Wrapper>

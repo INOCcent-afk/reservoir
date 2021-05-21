@@ -10,7 +10,6 @@ import styled from "styled-components";
 
 type Props = {
   image: string;
-
   price: number;
   id: number;
   category: string;
