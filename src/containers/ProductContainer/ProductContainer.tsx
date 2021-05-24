@@ -35,6 +35,7 @@ const ProductContainer: FC = () => {
                 ) {
                   return val;
                 }
+                return false;
               })
               .map((product) => (
                 <Product
