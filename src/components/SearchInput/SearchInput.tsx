@@ -1,20 +1,26 @@
-import React, { ChangeEvent, FC } from "react";
+import React, { FC } from "react";
+import { useHistory } from "react-router";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { searchItem, locationChange } from "../../redux/Shop.slice";
 
 import { Input } from "./Search.styles";
 
 const SearchInput: FC = () => {
-  const [value, setValue] = React.useState("");
+  const dispatch = useAppDispatch();
+  const history = useHistory();
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
+  const search = useAppSelector((state) => state.cart.search);
+
+  history.listen(() => {
+    dispatch(locationChange());
+  });
 
   return (
     <>
       <Input
         type="text"
-        onChange={handleChange}
-        value={value}
+        onChange={(e) => dispatch(searchItem(e.target.value))}
+        value={search}
         placeholder="Search"
       />
     </>

@@ -61,20 +61,18 @@ const LogIn = () => {
                     <span>Terms of Service</span>
                   </p>
                 </Title>
-                <div onClick={() => handleLogIn(githubProvider)}>
-                  <Button
-                    type="normalBTN"
-                    icon={<Icon icon="github" />}
-                    text="Log in with Github"
-                  />
-                </div>
-                <div onClick={() => handleLogIn(googleProvider)}>
-                  <Button
-                    type="normalBTN"
-                    icon={<Icon icon="google" />}
-                    text="Log in with Google"
-                  />
-                </div>
+                <Button
+                  type="normalBTN"
+                  icon={<Icon icon="github" />}
+                  text="Log in with Github"
+                  event={() => handleLogIn(githubProvider)}
+                />
+                <Button
+                  type="normalBTN"
+                  icon={<Icon icon="google" />}
+                  text="Log in with Google"
+                  event={() => handleLogIn(googleProvider)}
+                />
               </SocialMediaContainer>
             </Box>
           </Container>

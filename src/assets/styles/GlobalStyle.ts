@@ -109,8 +109,4 @@ export const AppContainer = styled.div`
   @media only screen and (min-width: ${ScreenSize.tabletScreen}) {
     justify-content: unset;
   }
-
-  @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
-    justify-content: unset;
-  }
 `;

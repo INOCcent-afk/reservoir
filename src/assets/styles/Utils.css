@@ -2,6 +2,10 @@
   display: none;
 }
 
+.block-sm {
+  display: block;
+}
+
 @media only screen and (min-width: 768px) {
   .flex-md {
     display: flex;
@@ -12,10 +16,17 @@
 }
 
 @media only screen and (min-width: 992px) {
+  .none-lg {
+    display: none;
+  }
   .flex-lg {
     display: flex;
   }
   .block-lg {
     display: block;
   }
+}
+
+.checkoutmessage {
+  padding: 20px;
 }

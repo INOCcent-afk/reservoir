@@ -20,12 +20,12 @@ export const ButtonContainer = styled.button`
   svg {
     height: 25px;
     width: 25px;
+    margin-right: 8px;
   }
 
   p {
     color: ${Colors.bodyFontColor};
     font-weight: bold;
-    margin-left: 8px;
     font-size: 15px;
   }
 `;

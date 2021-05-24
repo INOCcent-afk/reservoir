@@ -22,8 +22,12 @@ import {
 
 const App = () => {
   const history = useHistory();
+  const [show, setShow] = React.useState(false);
 
   React.useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 800);
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
         history.push("/app");
@@ -39,15 +43,17 @@ const App = () => {
       <AppContainer>
         <GlobalStyle />
         <Header />
-        <BodyInner>
-          <Switch>
-            <Route path="/" exact component={LogIn} />
-            <Route path="/app" exact component={AppScreen} />
-            <Route path="/search" exact component={Search} />
-            <Route path="/cart" exact component={Cart} />
-            <Route path="/profile" exact component={Profile} />
-          </Switch>
-        </BodyInner>
+        {show && (
+          <BodyInner>
+            <Switch>
+              <Route path="/" exact component={LogIn} />
+              <Route path="/app" exact component={AppScreen} />
+              <Route path="/search" exact component={Search} />
+              <Route path="/cart" exact component={Cart} />
+              <Route path="/profile" exact component={Profile} />
+            </Switch>
+          </BodyInner>
+        )}
         <MobileNavigation />
       </AppContainer>
     </>
@@ -55,12 +61,3 @@ const App = () => {
 };
 
 export default App;
-
-// import socialMediaAuth from "./utils/auth";
-// import Pagination from "@material-ui/lab/Pagination";
-
-/* <div className={classes.root}>
-          <Pagination count={5} color="primary"></Pagination>
-        </div> */
-
-// useStyles();

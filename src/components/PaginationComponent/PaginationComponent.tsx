@@ -1,11 +1,8 @@
 import React, { FC } from "react";
 
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import { Colors } from "../../assets/styles/Colors";
-
 import Pagination from "@material-ui/lab/Pagination";
 
-import { PaginationContainer } from "./PaginationComponent.styles";
+import { PaginationContainer, useStyles } from "./PaginationComponent.styles";
 
 type Props = {
   postsPerPage: number;
@@ -13,26 +10,6 @@ type Props = {
   currentPage: any;
   page: number;
 };
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      "& .MuiPagination-ul": {
-        justifyContent: "space-between",
-      },
-      "& .MuiPaginationItem-root": {
-        color: Colors.bodyFontColor,
-        fontSize: "1.2rem",
-      },
-      "& .MuiPaginationItem-root:hover": {
-        backgroundColor: Colors.secondaryFontColor,
-      },
-      "& .Mui-selected": {
-        backgroundColor: Colors.secondaryFontColor,
-      },
-    },
-  })
-);
 
 const PaginationComponent: FC<Props> = ({
   postsPerPage,
