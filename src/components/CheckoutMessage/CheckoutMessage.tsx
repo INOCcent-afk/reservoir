@@ -1,10 +1,16 @@
 import React, { FC } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-import { useAppSelector } from "../../redux/hook";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+
+import { checkout } from "../../redux/Shop.slice";
+
+import Button from "../Button";
 
 const CheckoutMessage: FC = () => {
+  const dispatch = useAppDispatch();
+  const history = useHistory();
   const cart = useAppSelector((state) => state.cart.cart);
 
   const [cartCount, setCartCount] = React.useState(0);
@@ -44,6 +50,16 @@ const CheckoutMessage: FC = () => {
           <p>
             You have a total of <span>₱{totalPrice.toFixed(2)}</span>
           </p>
+          {cartCount !== 0 ? (
+            <Button
+              type="normalBTN"
+              text="Checkout"
+              event={() => {
+                dispatch(checkout());
+                history.push("/thankyou");
+              }}
+            ></Button>
+          ) : null}
         </>
       ) : (
         <>

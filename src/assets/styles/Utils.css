@@ -6,6 +6,13 @@
   display: block;
 }
 
+.mt-10 {
+  margin-top: 10px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+
 @media only screen and (min-width: 768px) {
   .flex-md {
     display: flex;
@@ -29,4 +36,7 @@
 
 .checkoutmessage {
   padding: 20px;
+}
+.checkoutmessage button {
+  margin: 10px 0;
 }

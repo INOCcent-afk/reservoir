@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react";
 
 import { ButtonContainer, ProductButton } from "./Button.styles";
 
-type Props = { icon?: ReactNode; text: string; event: () => void } & (
+type Props = { icon?: ReactNode; text: string; event?: () => void } & (
   | {
       type: "normalBTN";
     }

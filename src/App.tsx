@@ -19,6 +19,7 @@ import {
   BodyInner,
   GlobalStyle,
 } from "./assets/styles/GlobalStyle";
+import Thankyou from "./screens/Thankyou";
 
 const App = () => {
   const history = useHistory();
@@ -51,6 +52,7 @@ const App = () => {
               <Route path="/search" exact component={Search} />
               <Route path="/cart" exact component={Cart} />
               <Route path="/profile" exact component={Profile} />
+              <Route path="/thankyou" exact component={Thankyou} />
             </Switch>
           </BodyInner>
         )}
