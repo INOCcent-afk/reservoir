@@ -25,6 +25,9 @@ const App = () => {
   const [show, setShow] = React.useState(false);
 
   React.useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 800);
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
         history.push("/app");
@@ -33,9 +36,6 @@ const App = () => {
         history.push("/");
       }
     });
-    setTimeout(() => {
-      setShow(true);
-    }, 800);
   }, [history]);
 
   return (
