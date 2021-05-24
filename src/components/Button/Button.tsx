@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react";
 
 import { ButtonContainer, ProductButton } from "./Button.styles";
 
-type Props = { icon?: ReactNode; text: string } & (
+type Props = { icon?: ReactNode; text: string; event: () => void } & (
   | {
       type: "normalBTN";
     }
@@ -13,13 +13,13 @@ const Button: FC<Props> = (props) => {
   return (
     <>
       {props.type === "normalBTN" ? (
-        <ButtonContainer>
+        <ButtonContainer onClick={props.event}>
           {props.icon}
           <p>{props.text}</p>
         </ButtonContainer>
       ) : null}
       {props.type === "productBTN" ? (
-        <ProductButton>
+        <ProductButton onClick={props.event}>
           <p> {props.text}</p>
         </ProductButton>
       ) : null}

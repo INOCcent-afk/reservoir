@@ -36,9 +36,11 @@ const Product: FC<Props> = ({ image, price, id, category, title }: Props) => {
             </ProductPrice>
           </ProductInfo>
         </ProductHeader>
-        <div onClick={() => dispatch(addToCart(id))}>
-          <Button type="productBTN" text="ADD TO CART" />
-        </div>
+        <Button
+          type="productBTN"
+          text="ADD TO CART"
+          event={() => dispatch(addToCart(id))}
+        />
       </Box>
     </>
   );

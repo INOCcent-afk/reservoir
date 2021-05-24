@@ -9,12 +9,14 @@ import { ReactComponent as LogoutIcon } from "../../assets/icons/logout-icon.svg
 import { ReactComponent as ProfileIcon } from "../../assets/icons/profile-icon.svg";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search-icon.svg";
 import { ReactComponent as RightArrowIcon } from "../../assets/icons/right-icon.svg";
+import { ReactComponent as BigCartIcon } from "../../assets/icons/desktop-cart.svg";
 
 type Props = {
   icon:
     | "google"
     | "bug"
     | "cart"
+    | "bigcart"
     | "github"
     | "home"
     | "logout"
@@ -43,6 +45,8 @@ const Icon: FC<Props> = ({ icon }: Props) => {
       return <SearchIcon />;
     case "rightarrow":
       return <RightArrowIcon />;
+    case "bigcart":
+      return <BigCartIcon />;
   }
 };
 

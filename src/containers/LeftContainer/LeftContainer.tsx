@@ -49,13 +49,10 @@ const LeftContainer: FC = () => {
         </>
       ) : (
         <>
-          {cartCount === 0 ? (
-            <h1>Your Cart</h1>
-          ) : (
-            <h1>
-              <Link to="/cart">View your cart</Link>
-            </h1>
-          )}
+          <h1>
+            <Link to="/cart">View your cart</Link>
+          </h1>
+
           <p>
             You have <span>{cartCount}</span> items in cart right now
           </p>

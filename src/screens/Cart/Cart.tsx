@@ -5,8 +5,6 @@ import CartContainer from "../../containers/CartContainer";
 import LeftContainer from "../../containers/LeftContainer";
 import RightContainer from "../../containers/RightContainer";
 
-import { useAppSelector } from "../../redux/hook";
-
 const Cart = () => {
   const [show, setShow] = React.useState(false);
 
