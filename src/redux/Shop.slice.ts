@@ -98,6 +98,12 @@ export const shopSlice = createSlice({
         search: "",
       };
     },
+    checkout: (state) => {
+      return {
+        ...state,
+        cart: [],
+      };
+    },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
@@ -119,6 +125,7 @@ export const {
   adjustQty,
   searchItem,
   locationChange,
+  checkout,
 } = shopSlice.actions;
 
 export default shopSlice.reducer;

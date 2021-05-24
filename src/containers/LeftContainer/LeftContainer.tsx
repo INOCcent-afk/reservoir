@@ -6,7 +6,7 @@ import { Colors } from "../../assets/styles/Colors";
 
 const LeftContainer: FC = () => {
   return (
-    <Container className="none-sm block-lg">
+    <Container className="checkoutmessage none-sm block-lg">
       <CheckoutMessage />
     </Container>
   );

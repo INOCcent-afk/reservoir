@@ -25,7 +25,7 @@ const Header: FC = () => {
   };
 
   history.listen(() => {
-    check("/app") || check("/cart") || check("/profile")
+    check("/app") || check("/cart") || check("/profile") || check("/thankyou")
       ? setShow(true)
       : setShow(false);
   });
