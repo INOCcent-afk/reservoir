@@ -17,10 +17,10 @@ const MobileNavigation: FC = () => {
         <LoginHeader>
           <LogoBranding />
           <Nav>
-            <Link to="/app">
+            <Link to="/">
               <p>Privacy Policy</p>
             </Link>
-            <Link to="/app">
+            <Link to="/">
               <p>Report a Bug</p>
             </Link>
             <Link to="github.com">
