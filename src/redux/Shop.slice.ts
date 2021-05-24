@@ -92,6 +92,12 @@ export const shopSlice = createSlice({
         search: action.payload,
       };
     },
+    locationChange: (state) => {
+      return {
+        ...state,
+        search: "",
+      };
+    },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
@@ -107,7 +113,12 @@ export const shopSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, adjustQty, searchItem } =
-  shopSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  adjustQty,
+  searchItem,
+  locationChange,
+} = shopSlice.actions;
 
 export default shopSlice.reducer;

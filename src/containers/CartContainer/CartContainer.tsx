@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import CartItem from "../../components/CartItem";
+import CheckoutMessage from "../../components/CheckoutMessage";
 import Icon from "../../components/Icon";
 
 import { useAppSelector } from "../../redux/hook";
@@ -21,6 +22,9 @@ const CartContainer = () => {
         <Wrapper>
           {cartItems.length ? (
             <>
+              <div className="checkoutmessage block-sm none-lg">
+                <CheckoutMessage />
+              </div>
               {cartItems.map((item) => (
                 <CartItem
                   title={item.title!}

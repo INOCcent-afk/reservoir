@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 
 import Icon from "../../components/Icon";
 import SearchInput from "../../components/SearchInput/SearchInput";
+import ProductContainer from "../../containers/ProductContainer";
 
 import { SearchPageTitle } from "./Search.styles";
 
@@ -29,6 +30,7 @@ const Search: FC = () => {
         </div>
         <SearchInput />
       </SearchPageTitle>
+      <ProductContainer />
     </>
   );
 };
