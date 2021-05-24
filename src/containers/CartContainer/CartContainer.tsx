@@ -53,6 +53,11 @@ const CartContainer = () => {
 export default CartContainer;
 
 export const CartMessage = styled.div`
+  height: calc(85vh - 30px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   svg {
     width: 100px;
     height: 100px;

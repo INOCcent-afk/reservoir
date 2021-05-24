@@ -5,12 +5,14 @@ import { getProducts as getProductsFromApi } from "../utils/api/fetchProducts";
 const initialState: Products = {
   products: [],
   cart: [],
+  search: "",
   status: null,
 };
 
 type Products = {
   products: ProductsInfo[];
   cart: CartInfo[];
+  search: string;
   status: string | null;
 };
 
@@ -84,6 +86,12 @@ export const shopSlice = createSlice({
         ),
       };
     },
+    searchItem: (state, action: PayloadAction<string>) => {
+      return {
+        ...state,
+        search: action.payload,
+      };
+    },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
@@ -99,6 +107,7 @@ export const shopSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, adjustQty } = shopSlice.actions;
+export const { addToCart, removeFromCart, adjustQty, searchItem } =
+  shopSlice.actions;
 
 export default shopSlice.reducer;
