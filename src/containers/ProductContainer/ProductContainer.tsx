@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styled from "styled-components";
 
 import Loading from "../../components/Loading";
 import Product from "../../components/Product";
@@ -18,6 +19,18 @@ const ProductContainer: FC = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+  const filteredOptions = products.filter((val) => {
+    if (search === "") {
+      return val;
+    } else if (
+      val.title?.toLowerCase().includes(search.toLowerCase()) ||
+      val.category?.toLowerCase().includes(search.toLowerCase())
+    ) {
+      return val;
+    }
+    return false;
+  });
+
   return (
     <>
       <Container>
@@ -25,19 +38,8 @@ const ProductContainer: FC = () => {
           <Loading />
         ) : (
           <Wrapper>
-            {products
-              .filter((val) => {
-                if (search === "") {
-                  return val;
-                } else if (
-                  val.title?.toLowerCase().includes(search.toLowerCase()) ||
-                  val.category?.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return val;
-                }
-                return false;
-              })
-              .map((product) => (
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((product) => (
                 <Product
                   title={product.title}
                   id={product.id}
@@ -46,7 +48,12 @@ const ProductContainer: FC = () => {
                   image={product.image}
                   category={product.category}
                 />
-              ))}
+              ))
+            ) : (
+              <SearchMessage>
+                <p>No results containing all your search terms were found.</p>
+              </SearchMessage>
+            )}
           </Wrapper>
         )}
       </Container>
@@ -55,3 +62,7 @@ const ProductContainer: FC = () => {
 };
 
 export default ProductContainer;
+
+export const SearchMessage = styled.div`
+  padding: 20px;
+`;
