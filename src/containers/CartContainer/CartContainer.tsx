@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { ScreenSize } from "../../assets/styles/ScreenSize";
 
 import CartItem from "../../components/CartItem";
 import CheckoutMessage from "../../components/CheckoutMessage";
@@ -71,4 +72,9 @@ export const CartMessage = styled.div`
     margin: 5px 0;
   }
   text-align: center;
+
+  @media only screen and (min-width: ${ScreenSize.laptopScreen}) {
+    height: unset;
+    margin: 50px 10% 0 0;
+  }
 `;
