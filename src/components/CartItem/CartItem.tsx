@@ -42,6 +42,9 @@ const CartItem: FC<Props> = ({
     e.preventDefault();
     setInput(parseInt(e.target.value));
     dispatch(adjustQty({ id: id, qty: parseInt(e.target.value) }));
+    if (parseInt(e.target.value) === 0) {
+      dispatch(removeFromCart(id));
+    }
   };
 
   return (
@@ -71,7 +74,6 @@ const CartItem: FC<Props> = ({
               inputProps: {
                 min: "0",
                 max: "10",
-                step: "1",
                 onKeyDown: (event) => {
                   event.preventDefault();
                 },
